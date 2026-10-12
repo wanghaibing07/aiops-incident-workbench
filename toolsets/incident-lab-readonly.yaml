@@ -1,0 +1,22 @@
+toolsets:
+  incident-lab/readonly:
+    enabled: true
+    description: Read-only investigation of incident-lab
+    tags:
+    - cli
+    tools:
+    - name: incident_lab_pod_snapshot
+      description: 'Return the real Pod count, names and phases in incident-lab only.
+        No cluster-wide access. No user-supplied namespace or shell parameters.
+
+        '
+      command: 'kubectl --request-timeout=10s -n incident-lab get pods -o json | python3
+        -c ''import json,sys; data=json.load(sys.stdin); pods=[{"name":p["metadata"]["name"],"phase":p.get("status",{}).get("phase","Unknown")}
+        for p in data["items"]]; print(json.dumps({"namespace":"incident-lab","count":len(pods),"pods":pods}))''
+
+        '
+    - name: incident_lab_service_route_evidence
+      description: Read Pod labels, Service selectors and EndpointSlice addresses
+        in incident-lab. Fixed read-only namespace; no parameters.
+      command: kubectl --request-timeout=10s -n incident-lab get pods,services,endpointslices
+        -o json
