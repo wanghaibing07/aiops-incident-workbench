@@ -22,6 +22,8 @@ Pod 正常运行，但 Service 选择器与 Pod 标签不匹配，
 
 Agent 根据 Kubernetes 资源证据定位问题，人工修复后恢复 HTTP 200。
 
+[查看 T1 调查记录](docs/t1-investigation.md)
+
 ### T3：Nginx 上游端口错误
 
 将 Gateway 的上游端口从 80 修改为 81：
