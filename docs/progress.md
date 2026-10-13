@@ -1,17 +1,27 @@
-# AIOps Incident Investigation Workbench
+# 项目进度
 
-基于 HolmesGPT 0.43.0 的 Kubernetes 故障调查实验。
+## Stage 1：Agent 故障调查验证
 
-## 已验证
-- 自定义模型 API 与 Agent 工具调用
-- namespace 级 Kubernetes 只读访问
-- T1 Service Selector 故障调查及恢复
-- T3 Gateway 与下游 HTTP 基线
+状态：核心实验完成。
 
-## 已发现的限制
-- HolmesGPT 内置查询工具存在命名空间范围问题
-- 使用自定义 YAML 工具进行范围受限的取证
-- T3 业务依赖故障调查仍待完成
+### 已完成
+- HolmesGPT 模型及工具接入
+- incident-lab 命名空间只读调查
+- T1 Service Selector 故障调查与恢复
+- T3 Gateway 上游端口故障调查与恢复
+- T3 增强前后 Agent 能力对比
+- GitHub 远程仓库及证据文档
 
-## 当前工程选择
-复用成熟 Agent，只有实验证明存在缺口时才开发 Python 扩展。
+### 已验证的工程结论
+- Kubernetes 资源信息可以支持 T1 故障定位。
+- T3 原有工具不足以确认具体错误端口。
+- 增加日志取证工具后，Agent 识别出 81 与 80 不匹配。
+- Agent 保持只读，恢复操作由人工完成。
+
+### 尚未完成
+- T1 案例证据整理
+- 最小可复现 Kubernetes 资源清单
+- 项目最终展示与面试材料
+
+### 首版决策
+暂不开发重复功能的 Python Agent 工具。
