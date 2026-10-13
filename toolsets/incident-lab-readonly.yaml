@@ -20,3 +20,6 @@ toolsets:
         in incident-lab. Fixed read-only namespace; no parameters.
       command: kubectl --request-timeout=10s -n incident-lab get pods,services,endpointslices
         -o json
+    - name: incident_lab_gateway_error_logs
+      description: "Read recent Nginx logs of t3-gateway in incident-lab. Use to investigate upstream connection failures and the actual upstream port. Fixed namespace, no parameters, read-only."
+      command: "kubectl --request-timeout=10s -n incident-lab logs deployment/t3-gateway --since=15m --tail=80 --timestamps"
