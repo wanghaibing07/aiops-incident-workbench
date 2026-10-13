@@ -75,3 +75,7 @@ Agent 根据 Kubernetes 资源证据定位问题，人工修复后恢复 HTTP 20
 
 Agent 的只读 RBAC 与认证凭据不包含在此文件中。
 
+## 架构与面试讲解
+
+- [项目架构、只读调查边界和复现限制](docs/architecture.md)
+- [简历项目经历与 1/3 分钟面试讲解草稿](docs/interview-guide.md)
