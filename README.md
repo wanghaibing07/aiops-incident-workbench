@@ -63,5 +63,15 @@ Agent 根据 Kubernetes 资源证据定位问题，人工修复后恢复 HTTP 20
 目前验证的是实验环境下的调查能力，
 不代表生产环境自动恢复能力。
 
-本仓库已包含工具定义与 T3 证据；
-完整的环境复现清单仍待整理。
+## 最小复现资源
+
+[查看 Kubernetes YAML](k8s/incident-lab.yaml)
+
+包含 Namespace、两个 Deployment、两个 Service
+及 Gateway ConfigMap。
+
+该配置依据实验环境参数重建，尚未在全新集群
+完成部署验收。
+
+Agent 的只读 RBAC 与认证凭据不包含在此文件中。
+
