@@ -4,6 +4,9 @@
 AI Agent 能否利用真实集群证据定位故障，以及工具扩展
 能否提升根因分析的准确性。
 
+> **进度**：Stage 1（HolmesGPT 集成、T1/T3 受控故障验证）已封板。Stage 2 从独立理解、运行说明和求职转化开始，不重新搭建 Agent。
+
+
 ## 项目概况
 
 - Kubernetes：v1.36.4
@@ -79,3 +82,8 @@ Agent 的只读 RBAC 与认证凭据不包含在此文件中。
 
 - [项目架构、只读调查边界和复现限制](docs/architecture.md)
 - [简历项目经历与 1/3 分钟面试讲解草稿](docs/interview-guide.md)
+
+## 阶段归档与后续计划
+
+- [Stage 1 封板报告：已验证事实与未完成边界](docs/stage1-closeout-2026-10-13.md)
+- [Stage 2 规划与下一对话交接书](docs/stage2-handoff-plan-2026-10-13.md)
