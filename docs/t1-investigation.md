@@ -1,4 +1,4 @@
-# T1：Service Selector 不匹配
+# AI SRE 案例 T1：Service Selector 不匹配
 
 ## 故障场景
 Kubernetes namespace：incident-lab

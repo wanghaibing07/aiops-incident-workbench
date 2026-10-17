@@ -1,4 +1,4 @@
-# 技术复盘：Kubernetes 故障调查与 Agent 工具扩展
+# AI SRE 技术复盘：Kubernetes 故障调查与 Agent 工具扩展
 
 本项目在独立 Kubernetes 实验命名空间中，通过 HolmesGPT 0.43.0 调查两个受控故障，使用固定范围的只读工具获取证据，最终由人工恢复服务。
 

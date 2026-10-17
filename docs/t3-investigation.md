@@ -1,4 +1,4 @@
-# T3：Gateway 上游端口故障调查
+# AI SRE 案例 T3：Gateway 上游端口故障调查
 
 ## 实验环境
 - Kubernetes namespace: incident-lab

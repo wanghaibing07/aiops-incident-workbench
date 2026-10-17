@@ -1,6 +1,6 @@
-# 项目架构与调查边界
+# AI SRE 架构与故障调查流程
 
-本项目基于现有三节点 Kubernetes 实验集群，在独立命名空间 `incident-lab` 里部署两个 Nginx 服务，并由开发机上的 HolmesGPT 使用只读工具调查故障。
+本 AI SRE 项目基于三节点 Kubernetes 集群，在独立命名空间 `incident-lab` 部署两个 Nginx 服务。HolmesGPT 在开发机上通过只读工具收集证据并调查故障，恢复操作由工程师执行。
 
 ```mermaid
 flowchart LR
@@ -8,7 +8,7 @@ flowchart LR
   GS --> GP[Nginx Gateway Pod]
   GP --> TS[Service: t1-web :80]
   TS --> TP[Nginx Web Pod]
-  A[aiops-dev01 / HolmesGPT] -->|只读工具| API[Kubernetes API]
+  A[调查节点 / HolmesGPT] -->|只读工具| API[Kubernetes API]
   API -.->|仅 incident-lab| K[Pod / Service / EndpointSlice / Pod 日志]
 ```
 
